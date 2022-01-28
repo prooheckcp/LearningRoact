@@ -25,3 +25,23 @@ local app = Roact.createElement("ScreenGui", {}, {
         Text = "Hello World"
     })
 })
+
+local myHandle = Roact.mount(app, playerGui)
+
+task.wait(1)
+
+local app2 = Roact.createElement("ScreenGui", {}, {
+    HelloWorld = Roact.createElement("TextLabel", {
+        Size = UDim2.fromScale(0.5, 0.5),
+        Position = UDim2.fromScale(0.5, 0.5),
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        TextScaled = true,
+        Text = "Hello World2"
+    })
+})
+
+Roact.update(myHandle, app2)
+
+task.wait(1)
+
+Roact.unmount(myHandle)
