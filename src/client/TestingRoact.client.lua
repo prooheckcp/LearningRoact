@@ -29,10 +29,12 @@ end
 
 local clockElement = Roact.createElement(clock, {text = 1})
 
---local handle = Roact.mount(clockElement, playerGui, "Some Clock Gui")
+--[[
+local handle = Roact.mount(clockElement, playerGui, "Some Clock Gui")
 
 local counter = 0
 while task.wait(1) do
     counter += 1
     Roact.update(handle, Roact.createElement(clock, {text = counter}))
-end
+end    
+]]
