@@ -23,10 +23,11 @@ local function clock(currentTime)
         })
     })
 end
-
+--[[
 local handle = Roact.mount(clock(currentTime), playerGui, "Clock UI")
 
 while task.wait(1) do
     currentTime = currentTime + 1
     handle = Roact.update(handle, clock(currentTime))
-end
+end    
+]]
